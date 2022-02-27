@@ -67,7 +67,7 @@ main() {
     local second_measure=( $(get_bandwidth $os) )
     local download_speed=$(((${second_measure[0]} - ${first_measure[0]}) / $sleep_time))
     local upload_speed=$(((${second_measure[1]} - ${first_measure[1]}) / $sleep_time))
-    $(set_tmux_option "@network-bandwidth-previous-value" "#[fg=#9FF37B]↓$(format_speed $download_speed) #[fg=#FFFFFF]• #[fg=#F2740C]↑$(format_speed $upload_speed)")
+    $(set_tmux_option "@network-bandwidth-previous-value" "#[fg=#9FF37B]↓$(format_speed $download_speed) #[fg=white]• #[fg=#ffa500]↑$(format_speed $upload_speed)")
   fi
 
   echo -n "$(get_tmux_option "@network-bandwidth-previous-value")"
